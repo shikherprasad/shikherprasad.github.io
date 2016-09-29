@@ -1,1 +1,24 @@
-Hello World
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<div style="text-align: justify;">
+Continuing from the last post, where we discussed how whatsApp achieves end-to-end encryption, we will discuss how WhatsApp&nbsp; achieves end-to-end encryption in media and other attachments transmission.</div>
+<div style="text-align: justify;">
+<br /></div>
+<div style="text-align: justify;">
+The sender generates an ephemeral 32-byte AES256 key, and an ephemeral 32-byte HMAC-SHA256 key. It uses the AES-256 key to encrypt the message and uses the SHA-256 key to append the MAC* of the ciphertext.</div>
+<div style="text-align: justify;">
+<blockquote class="tr_bq">
+*MAC (<b>message authentication code</b>) is a short piece of information used to <span class="selflink">authenticate a message</span>, i.e.,&nbsp; to confirm that the message came from the stated sender 
+(its authenticity) and has not been changed in transit.</blockquote>
+Then the sender uploads the encrypted attachment to a blob (Binary Large OBject) store and transmits the encrypted message to the recipient that contains the encryption keys and a pointer to the blob in the blob store.<br />
+<br />
+The recipient retrieves the encrypted blob from the blob store, verifies the MAC and decrypts the plaintext.<br />
+<br />
+In the next blog, we will discuss how group messages and WhatsApp calls are encrypted.<br />
+<br />
+Ref.: <i>https://www.whatsapp.com/security/&nbsp;</i><br />
+<br />
+<div style="line-height: 100%; margin-bottom: 0cm; text-align: justify;">
+<span style="font-style: normal;"><span style="text-decoration: none;">Keep Learning...Keep Sharing..~~!! </span></span></div>
+<span style="font-style: normal;"><span style="text-decoration: none;">Ta-Ta. </span></span><i>&nbsp;</i> </div>
+</div>
+
